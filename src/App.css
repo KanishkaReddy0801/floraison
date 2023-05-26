@@ -13,26 +13,87 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Header Styles */
+header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  margin: 0;
+}
+
+.menuBar {
+  margin-top: -10px;
+  height: 100%;
+  width: 30%;
+  background-color: black;
+}
+
+h3 {
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.menu {
+  color: white;
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  bottom: 0;
+  right: 10px;
+  padding: 10px;
+  width: 28.2%;
+  height: 750px;
+  background-color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.menu ol {
+  list-style-type: none;
+  margin-top: 30px;
+  margin-left: 30%;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.menu ol:hover {
+  cursor: pointer;
+  color: white;
+}
+
+
+/* Icons Styles */
+.open,
+.close {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .menu {
+    top: 0px;
+    right: 20px;
+    width: 50%;
   }
 }
