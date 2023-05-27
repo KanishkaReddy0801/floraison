@@ -14,8 +14,8 @@ export default function Menu () {
         setShow(false)
     }
     return (
-        <>
-        <header>
+        <div>
+        <div className="header">
             <img src={logo} alt="Logo" className="logo"></img>
             <div className="menuBar">
             <h3>Menu <BiMenu className="open" onClick={showMenu}></BiMenu></h3>
@@ -33,7 +33,7 @@ export default function Menu () {
             </div> : null
         }
             </div>
-        </header>
-        </>
+        </div>
+        </div>
     )
 }
