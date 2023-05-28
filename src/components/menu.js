@@ -22,7 +22,7 @@ export default function Menu () {
             {
             show? <div className="menu">
                <BiX className="close" onClick={closeMenu}></BiX>
-               <ol><a href="/">Home</a></ol>
+               <ol><a href="/" >Home</a></ol>
                <ol><a href="https://www.floraison.in/our-company/">Our Company</a></ol>
                <ol><a href="https://www.floraison.in/our-leadership/">Our Leadership</a></ol>
                <ol><a href="https://www.floraison.in/our-execution/">Our Execution</a></ol>
