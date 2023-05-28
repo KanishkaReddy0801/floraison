@@ -477,20 +477,23 @@ h3 {
   position: relative;
   overflow: hidden;
   padding: 0 15rem;
+  margin-bottom: 90px;
 }
 
 .cards-wrapper {
   display: flex;
   gap: 20px;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
+  transform-style: preserve-3d;
 }
 
 .cards {
   flex: 0 0 22%;
   height: 250px;
   width: 150px;
-  transition: transform 0.3s ease-in;
+  transition: transform 0.4s ease;
   border: 0.5px solid #ddd;
+  transform-style: preserve-3d;
 }
 
 .cards:hover {
@@ -501,6 +504,7 @@ h3 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  transition: transform 0.4s ease-out;
   width: 30px;
   height: 30px;
   background-color: transparent;
@@ -519,13 +523,13 @@ h3 {
 }
 
 .active {
-  /* Active card styles */
   transform: scale(1.1)
 }
 
 .main3-heading {
   text-align: center;
   margin-top: 80px;
-  font-size: 24px;
-  font-weight: 800;
+  margin-bottom: 40px;
+  font-size: 26px;
+  font-weight: 900;
 }
