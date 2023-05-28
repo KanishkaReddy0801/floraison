@@ -10,8 +10,13 @@ import card3 from './assets/card3.webp'
 import card4 from './assets/card4.webp'
 import card5 from './assets/card5.webp'
 import Footer from './components/footer';
+import Carousel from './components/carousel';
 
 function App() {
+
+  const cards = ['https://www.floraison.in/wp-content/uploads/2020/09/Floraison-India-Entry-Strategies-India-PEO-border-new.jpg'];
+
+
   return (
     <div className="App">
       <Menu/>
@@ -69,6 +74,8 @@ Go beyond your current needs and experience our holistic range of services tailo
             />
       </div>
           <Main2/>
+
+          <Carousel cards={cards}/>
         <Footer/>
     </div>
   );
