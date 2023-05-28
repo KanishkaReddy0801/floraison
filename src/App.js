@@ -10,8 +10,13 @@ import card3 from './assets/card3.webp'
 import card4 from './assets/card4.webp'
 import card5 from './assets/card5.webp'
 import Footer from './components/footer';
+import Carousel from './components/carousel';
+import crsl1 from './assets/crsl1.jpeg'
+import crsl2 from './assets/crsl2.jpeg'
+import crsl3 from './assets/crsl3.jpeg'
 
 function App() {
+  const cards = [crsl1, crsl2, crsl3, crsl2];
   return (
     <div className="App">
       <Menu/>
@@ -69,6 +74,8 @@ Go beyond your current needs and experience our holistic range of services tailo
             />
       </div>
           <Main2/>
+          <h1 className='main3-heading'>Download our ePublications</h1>
+          <Carousel cards={cards}/>
         <Footer/>
     </div>
   );
