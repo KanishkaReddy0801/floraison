@@ -1,12 +1,16 @@
 import '../App.css'
 import { FaAngleDoubleRight } from "react-icons/fa";
+import main21 from '../assets/main21.jpeg'
+import main22 from '../assets/main22.jpeg'
+import main23 from '../assets/main23.jpeg'
+import main24 from '../assets/main24.jpeg'
 
 export default function Main2() {
     return(
         <>
       <div className="main-container">
         <div className="main-image">
-          <img src="https://www.floraison.in/wp-content/uploads/2020/07/home-3.jpg" alt="" />
+          <img src={main21} alt="" />
         </div>
         <div className="main-content">
           <h2>Finding perfect growth story for our global and domestic clients</h2>
@@ -29,12 +33,12 @@ export default function Main2() {
           <a href='https://www.floraison.in/our-leadership/'><FaAngleDoubleRight className='arrow'/> Meet our leadership team</a>
         </div>
         <div className="main-image">
-          <img src="https://www.floraison.in/wp-content/uploads/2020/07/home-4.jpg" alt="" />
+          <img src={main22} alt="" />
         </div>
       </div>
       <div className="main-container">
         <div className="main-image">
-          <img src="https://www.floraison.in/wp-content/uploads/2020/07/home-5.jpg" alt="" />
+          <img src={main23} alt="" />
         </div>
         <div className="main-content">
           <h2>Each engagement is managed by single point of contact</h2>
@@ -58,7 +62,7 @@ export default function Main2() {
           <a href='https://www.floraison.in/local-expertise/'><FaAngleDoubleRight className='arrow'/> Learn how this benifits you</a>
         </div>
         <div className="main-image">
-          <img src="https://www.floraison.in/wp-content/uploads/2020/07/home-6.jpg" alt="" />
+          <img src={main24} alt="" />
         </div>
       </div>
         </>

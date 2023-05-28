@@ -1,4 +1,6 @@
 import '../App.css';
+import main11 from '../assets/main11.jpeg'
+import main12 from '../assets/main12.jpeg'
 
 
 export default function Main() {
@@ -12,12 +14,12 @@ export default function Main() {
           </p>
         </div>
         <div className="main-image">
-          <img src="https://www.floraison.in/wp-content/uploads/2020/07/ies-1.jpg" alt="" />
+          <img src={main11} alt="" />
         </div>
       </div>
       <div className="main-container">
         <div className="main-image">
-          <img src="https://www.floraison.in/wp-content/uploads/2020/09/new-h2.jpg" alt="" />
+          <img src={main12} alt="" />
         </div>
         <div className="main-content">
           <h2>Your journey into India starts by choosing the right partner</h2>

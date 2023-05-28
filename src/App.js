@@ -4,6 +4,12 @@ import Card from './components/card';
 import Menu from './components/menu';
 import Main from './components/main';
 import Main2 from './components/main2';
+import card1 from './assets/card1.webp'
+import card2 from './assets/card2.webp'
+import card3 from './assets/card3.webp'
+import card4 from './assets/card4.webp'
+import card5 from './assets/card5.webp'
+import Footer from './components/footer';
 
 function App() {
   return (
@@ -31,39 +37,39 @@ Go beyond your current needs and experience our holistic range of services tailo
                 link='https://www.floraison.in/india-entry-strategies/'
                 para="It's our mission to promote and formulate the entry of global organizations into the Indian markets
                  through well thought out & structured strategies which include India Subsidary & India PEO options" 
-                image="https://www.floraison.in/wp-content/uploads/2020/07/home-ss-1-1536x756.webp"
+                image={card1}
             />
             <Card 
                 heading={"India Subsidary"} 
                 link='https://www.floraison.in/india-subsidiary/'
                 para="Setting up & operating your own India subsidiary is a great way to access India on permanent long-term
                  basis. India subsidiary has been considered by several global companies operating in India" 
-                image="https://www.floraison.in/wp-content/uploads/2020/07/home-ss-2-1536x1025.webp"
+                image={card2}
             />
             <Card 
                 heading={"Subsidiary Support"} 
                 link='https://www.floraison.in/subsidiary-support/'
                 para="While you handle your core business, our professionals from bookkeeping, tax, compliance, payroll, HR & business
                  support services, each month under a professional engagement" 
-                image="https://www.floraison.in/wp-content/uploads/2020/07/home-ss-3.webp"
+                image={card3}
             />
             <Card 
                 heading={"India PEO Services"} 
                 link='https://www.floraison.in/india-peo-services/'
                 para="Simplify your global expansion plan and commence hiring your talent in India without the need to form your legal
                  entity. Engage our PEO services & get access to employees who you've always wanted to work with" 
-                image="https://www.floraison.in/wp-content/uploads/2020/07/home-ss-4-1536x1024.webp"
+                image={card4}
             />
             <Card 
                 heading={"Small Business Support"} 
                 link='https://www.floraison.in/small-business-support/'
                 para="We aspire to cultivate the spirit of entrepreneurship among potential domestic entrepreneurs & to help them start
                  their dream venture & support them to stabilize & grow their business and achieve success" 
-                image="https://www.floraison.in/wp-content/uploads/2020/07/home-ss-5-1536x1024.webp"
+                image={card5}
             />
       </div>
           <Main2/>
-      
+        <Footer/>
     </div>
   );
 }
