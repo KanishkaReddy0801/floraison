@@ -319,7 +319,7 @@ h3 {
 
 .contact-container {
   position: relative;
-  display: inline-block;
+  /* display: inline-block; */
   margin-top: 50px;
   margin-bottom: 0;
   padding: 0;
