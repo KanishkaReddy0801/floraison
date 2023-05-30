@@ -1,0 +1,15 @@
+@keyframes moveTopToBottom {
+    0% {
+      transform: translateY(-20%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .move-top-to-bottom {
+    animation-name: moveTopToBottom;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+  }
+  
