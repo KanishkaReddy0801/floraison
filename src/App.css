@@ -62,7 +62,6 @@ h3 {
 }
 
 .menu {
-  color: white;
   position: absolute;
   text-align: left;
   margin-top: 10px;
@@ -75,6 +74,8 @@ h3 {
 
 .menu ol {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
   margin-top: 25px;
   margin-left: 23%;
   padding: 0;
@@ -86,11 +87,8 @@ h3 {
   text-decoration: none;
 }
 
-.menu:hover a {
-   color: #a2a2a2;
-}
 
-.menu a:hover {
+ a:hover {
   cursor: pointer;
   color: white;
 }
@@ -496,7 +494,7 @@ h3 {
 .cards-wrapper {
   display: flex;
   gap: 20px;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease-in;
   transform-style: preserve-3d;
 }
 

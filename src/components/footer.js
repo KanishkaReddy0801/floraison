@@ -1,6 +1,32 @@
 import footer from '../assets/footer.jpeg'
+import { useRef,useEffect } from 'react';
+import './Css/footer.css'
 
 export default function Footer() {
+
+    const divRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (divRef.current) { // Check if divRef.current is not null or undefined
+        const divElement = divRef.current;
+        const rect = divElement.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight;
+
+        if (isVisible) {
+          divElement.classList.add('animate');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
     return (
         <>
             <div className='contact-container'>
@@ -12,7 +38,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className='footer-container'>
-                <div className='footer-content'>
+                <div className='footer-content' ref={divRef}>
                 <div className='footer-contact'>
                     <h5>Contact Us</h5>
                     <h6>Floraison India Strategic Consulting Pvt Ltd</h6>
