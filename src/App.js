@@ -15,37 +15,71 @@ import Carousel from './components/carousel';
 import crsl1 from './assets/crsl1.jpeg'
 import crsl2 from './assets/crsl2.jpeg'
 import crsl3 from './assets/crsl3.jpeg'
-import autoAnimate from "@formkit/auto-animate";
+import '../src/components/Css/carousel.css'
+// import autoAnimate from "@formkit/auto-animate";
+
 
 function App() {
   const cards = [crsl1, crsl2, crsl3, crsl2];
-  const parentRef = useRef();
+  // const parentRef = useRef();
+
+  // useEffect(() => {
+  //   if (parentRef.current) {
+  //     autoAnimate(parentRef.current);
+  //   }
+  // }, [parentRef]);
+
+  const headingRef = useRef(null);
+  const carouselRef = useRef(null);
 
   useEffect(() => {
-    if (parentRef.current) {
-      autoAnimate(parentRef.current);
-    }
-  }, [parentRef]);
+    const handleScroll = () => {
+      const headingRect = headingRef.current.getBoundingClientRect();
+      const carouselRect = carouselRef.current.getBoundingClientRect();
+      const isVisibleHeading = headingRect.top < window.innerHeight;
+      const isVisibleCarousel = carouselRect.top < window.innerHeight;
+
+      if (isVisibleHeading) {
+        headingRef.current.classList.add('animate-top');
+      } else {
+        headingRef.current.classList.remove('animate-top');
+      }
+
+      if (isVisibleCarousel) {
+        carouselRef.current.classList.add('animate-bottom');
+      } else {
+        carouselRef.current.classList.remove('animate-bottom');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className="App">
       <Menu/>
-      <Banner ref={parentRef}/>
-      <h1 className='main-heading' ref={parentRef}>
+      <Banner />
+      <h1 className='main-heading' >
         Your Gateway to India
       </h1>
-      <p className='subhead' ref={parentRef}>
+      <p className='subhead' >
         Expand your global business and enter the Indian markets NOW!
       </p>
-      <Main ref={parentRef}/>
-      <h1 className='main2-heading' ref={parentRef}>
+      <Main />
+      <h1 className='main2-heading' >
       Explore our Service Suite
       </h1>
-      <p className='subhead2' ref={parentRef}>
+      <p className='subhead2' >
       Share your plans with us and help us customise a workable strategy for your effective entry into India. <br/>
 Go beyond your current needs and experience our holistic range of services tailored for you
       </p>
 
-      <div style={{display:'flex',gap:'1.5rem',padding:"0 10rem",flexWrap:"wrap",justifyContent:"center"}} ref={parentRef}>
+      <div style={{display:'flex',gap:'1.5rem',padding:"0 10rem",flexWrap:"wrap",justifyContent:"center"}} >
             <Card 
                 heading={"India Entry Strategies"} 
                 link='https://www.floraison.in/india-entry-strategies/'
@@ -82,10 +116,14 @@ Go beyond your current needs and experience our holistic range of services tailo
                 image={card5}
             />
       </div>
-          <Main2 ref={parentRef}/>
-          <h1 className='main3-heading' ref={parentRef}>Download our ePublications</h1>
-          <Carousel cards={cards} ref={parentRef}/>
-        <Footer ref={parentRef}/>
+          <Main2 />
+          <h1 className="main3-heading" ref={headingRef}>
+        Download our ePublications
+      </h1>
+      <div className="carousel-container" ref={carouselRef}>
+        <Carousel cards={cards} />
+      </div>
+        <Footer />
     </div>
   );
 }

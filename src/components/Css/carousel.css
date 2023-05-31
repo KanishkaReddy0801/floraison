@@ -1,0 +1,22 @@
+.main3-heading {
+    opacity: 0;
+    transform: translateY(-20%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .carousel-container {
+    opacity: 0;
+    transform: translateY(20%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .main3-heading.animate-top {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .carousel-container.animate-bottom {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
