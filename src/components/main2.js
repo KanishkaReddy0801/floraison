@@ -4,11 +4,42 @@ import main21 from '../assets/main21.jpeg'
 import main22 from '../assets/main22.jpeg'
 import main23 from '../assets/main23.jpeg'
 import main24 from '../assets/main24.jpeg'
+import { useState, useEffect } from 'react';
+import './Css/main2.css'
+
 
 export default function Main2() {
+    
+  const [animationIndices, setAnimationIndices] = useState([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+
+      const divs = document.querySelectorAll('.main-container');
+      const indices = Array.from(divs).reduce((acc, div, index) => {
+        const rect = div.getBoundingClientRect();
+        const isVisible = rect.top < windowHeight && rect.bottom >= 0;
+        if (isVisible) {
+          acc.push(index);
+        }
+        return acc;
+      }, []);
+
+      setAnimationIndices(indices);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
     return(
+
         <>
-      <div className="main-container">
+      <div className={`main-container ${animationIndices.includes(0) ? 'odd' : 'even'}`}>
         <div className="main-image">
           <img src={main21} alt="" />
         </div>
@@ -22,7 +53,7 @@ export default function Main2() {
           <a href='https://www.floraison.in/our-company/'><FaAngleDoubleRight className='arrow'/> Know more about us</a>
         </div>
       </div>
-      <div className="main-container">
+      <div className={`main-container ${animationIndices.includes(1) ? 'odd' : 'even'}`}>
         <div className="main-content">
           <h2>Benefit from our visionary leadership and astute planning</h2>
           <p>
@@ -36,7 +67,7 @@ export default function Main2() {
           <img src={main22} alt="" />
         </div>
       </div>
-      <div className="main-container">
+      <div className={`main-container ${animationIndices.includes(2) ? 'odd' : 'even'}`}>
         <div className="main-image">
           <img src={main23} alt="" />
         </div>
@@ -51,7 +82,7 @@ export default function Main2() {
           <a href='https://www.floraison.in/our-execution/'><FaAngleDoubleRight className='arrow'/> See how we do this</a>
         </div>
       </div>
-      <div className="main-container">
+      <div className={`main-container ${animationIndices.includes(3) ? 'odd' : 'even'}`}>
         <div className="main-content">
           <h2>Our unmatched experience and local expertise will guide you throughout</h2>
           <p>

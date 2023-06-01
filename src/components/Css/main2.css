@@ -1,0 +1,35 @@
+.main-container {
+  opacity: 0;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.odd {
+  animation-name: slideInFromTop;
+}
+
+.even {
+  animation-name: slideInFromBottom;
+}

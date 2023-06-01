@@ -23,21 +23,21 @@ export default function Menu() {
   useEffect(() => {
     if (show) {
       let timeoutId;
-      const animationDelay = 100; // Delay between each item animation (in milliseconds)
+      const animationDelay = 100;
       
-      // Animate the items one by one
+      
       for (let i = 0; i < dropdownItems.length; i++) {
         timeoutId = setTimeout(() => {
           setVisibleItems(prevItems => [...prevItems, i]);
         }, i * animationDelay);
       }
       
-      // Clear the timeout when the component is unmounted or the menu is closed
+      
       return () => {
         clearTimeout(timeoutId);
       };
     } else {
-      // Reset the visible items when the menu is closed
+     
       setVisibleItems([]);
     }
   }, [show]);
